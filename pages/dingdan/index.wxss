@@ -1,0 +1,126 @@
+/* pages/dingdan/index.wxss */
+.tap{
+  padding: 0 40rpx;
+}
+.taplist{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 76rpx;
+  font-size: 23rpx;
+}
+.activetype{
+  color: #ffd161;
+  position: relative;
+  height: 100%;
+  line-height: 76rpx;
+}
+.activetype::after{
+  content: "";
+  position: absolute;
+  height: 6rpx;
+  background-color: #ffd161;
+  width: 100%;
+  top: 70rpx;
+}
+.dingdanitem{
+  border-bottom: 1px solid #ccc;
+  padding: 32rpx 0 0 20rpx;
+}
+.itemtit{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.dingdanitemtext{
+  width: 627rpx;
+  float: left;
+  margin-left: 5rpx;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12rpx;
+  padding-right: 20rpx;
+}
+.dingdanimage{
+  width: 80rpx;
+  height: 80rpx;
+}
+.dingdanimageicon{
+  width: 11rpx;
+  height: 21rpx;
+  margin-top: 32rpx;
+  margin-left: 8rpx;
+}
+.textstorng{
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.fontdefault{
+  font-size: 23rpx;
+}
+.dingdaninfo{
+  padding: 20rpx 20rpx 40rpx 80rpx;
+}
+.dingdaninfoitem{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40rpx;
+}
+.sumproduct,.buttobbox{
+  display: flex;
+  flex-direction: row;
+  height: 40rpx;
+  justify-content: flex-end;
+  align-items: center;
+}
+.sumproduct{
+  margin-top: 30rpx;
+  height: 40rpx;
+}
+.button{
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border: 1px solid #ccc;
+  float: right;
+}
+.buttobbox{
+  height: 50rpx;
+  margin-top: 20rpx;
+}
+.texticon{
+  text-align: center;
+  margin: 74rpx 5rpx 0 5rpx;
+  position: relative;
+  height: 30rpx;
+}
+.texticon::before{
+  height: 1px;
+  background-color: #ccc;
+  width: 184rpx;
+  position: absolute;
+  content: "";
+  left: 34rpx;
+  top: 18rpx;
+}
+.texticon::after{
+  height: 1px;
+  background-color: #ccc;
+  width: 184rpx;
+  position: absolute;
+  content: "";
+  right: 34rpx;
+  top: 18rpx;
+}
+.texticon text{
+  position: absolute;
+  top: 5rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+.empty{
+  text-align: center
+}

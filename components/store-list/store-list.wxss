@@ -1,0 +1,106 @@
+@import '/font/css/iconfont';
+.store{
+  margin-bottom: 40rpx;
+}
+.store-info{
+  overflow: hidden;
+}
+.store-img{
+  width: 180rpx;
+  margin: 0 20rpx;
+  float: left;
+}
+.store-img image{
+  width: 152rpx;
+  height: 114rpx;
+}
+.info{
+  width: 530rpx;
+  float: left;
+  font-size: 28rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+.info>view{
+  line-height: 30rpx;
+  vertical-align: middle;
+}
+.info>view:nth-of-type(2){
+  margin: 6rpx 0 10rpx 0;
+}
+.info .text{
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block
+}
+.icon-xingxing-copy,.icon-xing1{
+  color: #ffcc01;
+}
+.score,.saleMount{
+  margin: 0 10rpx;
+  font-size: 20rpx;
+}
+.delTime{
+  float:right;
+  font-size: 20rpx;
+}
+.priceInfo>view>text{
+  font-size: 20rpx;
+}
+.info-text{
+  margin-left: 200rpx;
+  font-size: 20rpx;
+}
+.info-text .jian{
+  padding-right: 20rpx;
+}
+.info-text .jian text:first-of-type{
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #ff8dc1;
+  margin-right: 10rpx;
+}
+.jian .icon{
+  float:right;
+}
+.zhe text:nth-of-type(1),.xin text:nth-of-type(1){
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+}
+.xin{
+  margin: 5rpx 0;
+}
+.zhe text:nth-of-type(1){
+  background-color: #75fb6d;
+}
+.xin text:nth-of-type(1){
+  background-color: #ff111a;
+}
+.flex-between{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+}
+.gun{
+  margin: 0 5rpx;
+  color: #e4e4e4;
+}
+.jian,.zhe{
+  margin-top: 16rpx;
+}
+.poi-deliver{
+  width: 100rpx;
+  height: 30rpx;
+}

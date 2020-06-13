@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mask-ing":"/components/masking/masking",
+    "tab":"/components/tab/tab"
+  }
+}

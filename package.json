@@ -1,0 +1,19 @@
+{
+  "name": "miniprogram-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@opcjs/zoro": "^3.0.1",
+    "@opcjs/zoro-plugin": "^3.0.0",
+    "vant-weapp": "^0.5.28",
+    "wechat-mp-redux": "^1.0.1",
+    "weui-miniprogram": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

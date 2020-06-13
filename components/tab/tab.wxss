@@ -1,0 +1,31 @@
+/* components/tab/tab.wxss */
+@import "/font/css/iconfont.wxss";
+.tabs{
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  color: #333;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20rpx;
+  position: sticky;
+  top: 60rpx;
+}
+.isfilexd{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+.tabs>view{
+  flex-grow: 1;
+  text-align: center;
+}
+.tabsActive .txt{
+  color: #ffd161;
+}
+.nodefiexd{
+  position: inherit;
+}

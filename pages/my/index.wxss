@@ -1,0 +1,71 @@
+.imagetitle{
+  height: 170rpx;
+  background-color: #ffd161;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.imagetxt{
+  height: 100rpx;
+  width: 100rpx;
+  margin: 27rpx;
+}
+.storng{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.phonenumber{
+  font-size: 31rpx;
+}
+.scrollview{
+  height: calc(100% - 210rpx);
+}
+page,container{
+  height: 100%;
+}
+.my-list-item-border {
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+}
+.my-list-item{
+  position: relative;
+height: 90rpx;
+display: flex;
+align-items: center;
+padding-left: 20rpx;
+color: #333333;
+
+}
+.my-list-item-icon{
+  flex: 0 0 auto;
+width: 40rpx;
+height: 40rpx;
+margin-right: 20rpx
+}
+.my-list-item-text{
+  flex: 0 0 auto;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Regular;
+  color: #999;
+}
+.my-list-item-jump{
+  flex: 0 0 auto;
+width: 10rpx;
+height: 18rpx;
+margin: 0 20rpx 0 auto;
+
+}
+.heit{
+  height: 20rpx;
+  background: #F4F4F4;
+}
+.quoituser{
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.superhit{
+  height: 200rpx;
+  background-color: #F4F4F4;
+}

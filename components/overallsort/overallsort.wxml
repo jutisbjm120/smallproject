@@ -1,0 +1,7 @@
+<mask-ing wx:if="{{showover}}" bindcloseisisfilexd="closeisisfilexd" nodefiexd="{{nodefiexd}}">
+  <view class="overalllist">
+    <block wx:for="{{data}}"  wx:key="item">
+      <view data-type="{{item.type}}" data-index="{{index}}" class="overalllist-item {{activeItem==index?'active':''}}" bindtap="filterOnClickSortType">{{item.value}}</view>
+    </block>
+  </view>
+</mask-ing>

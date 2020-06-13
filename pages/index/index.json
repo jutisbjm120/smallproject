@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "store-list": "/components/store-list/store-list",
+    "footer-loading":"/components/footer/footer",
+    "overall-resort":"/components/overallsort/overallsort",
+    "tab":"/components/tab/tab",
+    "filtter":"/components/filtter/filtter"
+  },
+  "enablePullDownRefresh":true,
+  "navigationBarTitleText": "美团外卖"
+}

@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="tap">
+    <view class="taplist">
+      <view wx:for="{{taplist}}" wx:key="index" data-type="{{item.type}}" class="{{item.type==activetype?'activetype':''}}" bindtap="toggleactive">
+        {{item.title}}
+      </view>
+    </view>
+  </view>
+  <view class="dingdanlist" wx:if="{{activetype=='every'}}">
+    <view class="dingdanitem" wx:for="{{pruductlist}}" wx:key="index">
+        <view class="itemtit clear">
+          <image class="fl dingdanimage" src="{{item.image}}" />
+          <view class="dingdanitemtext">
+            <text class="fl textstorng">{{item.title}}</text>
+            <image class="fl dingdanimageicon" src="/image/search-suggest-right.png"/>
+             <text class="fr fontdefault">订单已完成</text>
+          </view>
+        </view>    
+        <view class="dingdaninfo">
+          <view class="dingdaninfoitem clear" wx:for="{{item.productlist}}" wx:for-item="dingdaninfoitem" wx:key="dingdaninfoitem">
+            <text>{{dingdaninfoitem.product}}</text>
+            <text>X{{dingdaninfoitem.count}}</text>
+          </view>
+          <view class="sumproduct">
+            <text>共两件商品,实付¥{{item.sumproduct}}</text>
+          </view>
+          <view class="buttobbox">
+            <view class="button">再来一单</view>
+          </view>
+        </view>
+    </view>  
+  </view>
+  <view class="texticon" wx:if="{{activetype=='every'}}">
+    <text>继续拖动,查看三个月前订单</text>
+  </view>
+  <view class="empty" wx:if="{{activetype!='every'}}">
+    <image class="" src="/image/empty.jpg"/>
+    <view>
+      <text>{{emptytit}}</text>
+    </view>
+  </view>
+    
+</view>
+  

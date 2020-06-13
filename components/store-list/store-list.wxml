@@ -1,0 +1,55 @@
+<view class="store">
+  <view class="store-info" bindtap="detailpage" data-info="{{storeInfo}}">
+    <view class="store-img">
+      <image src="{{storeInfo.image}}"></image>
+    </view>
+    <view class="info">
+      <view class="text">
+        <text>{{storeInfo.title}}</text>
+      </view>
+      <view class="flex-between">
+        <view>
+          <text class="icon iconfont icon-xingxing-copy" wx:for="{{storeInfo.fen}}" wx:key="index"></text>
+          <text class="icon iconfont .icon-xing1" wx:if="{{storeInfo.fen-parseInt(storeInfo.fen)!=0}}"></text>
+          <!-- <text class="score">{{storeInfo.fen}}</text> -->
+          <text class="saleMount">月销{{storeInfo.yueShou}}</text>
+        </view>
+        <view class="delTime">
+          <text>{{storeInfo.time}}分钟</text>
+          <text class="gun">丨</text>
+          <text>{{storeInfo.jvli}}km</text>
+        </view>
+      </view>
+      <view class="priceInfo flex-between">
+        <view>
+          <text>起送¥{{storeInfo.qisong}}</text>
+          <text class="gun">丨</text>
+          <text>配送¥{{storeInfo.peisong}}</text>
+          <text class="gun">丨</text>
+          <text>人均¥{{storeInfo.renjun}}</text>
+        </view>
+        <view>
+          <image class="poi-deliver" src="/image/deliver.png" mode="aspectFit|aspectFill|widthFix" wx:if="{{storeInfo.ismeituan}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="info-text">
+    <view class="jian"  bindtap="togglesele">
+      <text>减</text>
+      <text>{{storeInfo.jian}}</text>
+      <text>{{storeInfo.quan}}</text>
+      <text class="icon iconfont icon-row-bottom-copy" wx:if="{{!isActive}}"></text>
+      <text class="icon iconfont icon-row-up-copy" wx:if="{{isActive}}"></text>
+    </view>
+    <view class="xin" wx:if="{{isActive}}">
+      <text>新</text>
+      <text>{{storeInfo.xin}}</text>
+    </view>
+    <view class="zhe">
+      <text>折</text>
+      <text>{{storeInfo.zhe}}</text>
+    </view>
+  </view>
+    
+</view>

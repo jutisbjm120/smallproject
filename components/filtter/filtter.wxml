@@ -1,0 +1,23 @@
+<mask-ing wx:if="{{showfillter}}" bindcloseisisfilexd="closeisisfilexd" nodefiexd="{{nodefiexd}}">
+  <scroll-view class="filterbox" scroll-y="true">
+    <text>{{allowance}}</text>
+    <view wx:for="{{data}}" wx:key="dataindex" class="filterboxlistcontainer" data-type="{{item.type}}" >
+      <text class="filterlisttitle">{{item.title}}</text>
+      <view class="filter-item-tab" >
+        <view wx:for="{{item['list']}}" wx:key="index" class="filter-item-btn-style flex-center  {{cell.style?'activefilter':''}} {{activetype==cell.type?'activefilter':''}}"  
+          wx:for-item="cell" wx:for-index="cellindex" catchtap="selectfilter" data-value="{{cell.mag}}" data-type="{{cell.type}}" data-select="{{item.type}}">
+          <image wx:if="{{cell.type=='meitfocus'}}" src="/image/0c61c293ed906c70ef4d0e041b187ace1280.png" class="filter-btn-icon"></image>
+          <image wx:if="{{cell.type=='punctuality'}}" src="/image/abdf8232f8a08f007c4b3617448be608849.png" class="filter-btn-icon"></image>
+          <image wx:if="{{cell.type=='relieved'}}" src="/image/7cac891c8e4ab73001014faae98643e91061.png" class="filter-btn-icon"></image>
+          <text>{{cell.mag}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="filter-select-footer">
+    <view class="filter-clear-btn" bindtap="clearfilter">清空</view>
+    <view class="filter-submit-btn flex-center" bindtap="seccessfilter">  完成
+      <view class="filter-select-count filter-submit-count flex-center" wx:if="{{activeInfo.length}}">{{activeInfo.length}}</view>
+    </view>
+  </view>
+</mask-ing>

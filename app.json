@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shoplist/shoplist",
+    "pages/my/index",
+    "pages/dingdan/index",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#ffd161",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/index.png",
+        "selectedIconPath": "icons/index_select.png"
+      },
+      {
+        "pagePath": "pages/dingdan/index",
+        "text": "订单",
+        "iconPath": "icons/cart.png",
+        "selectedIconPath": "icons/cart_select.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "icons/user.png",
+        "selectedIconPath": "icons/user_select.png"
+      }
+    ]
+  },
+  "plugins": {
+    "subway": {
+      "version": "1.0.4",
+      "provider": "wx6aaf93c4435fa1c1"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "sitemapLocation": "sitemap37.json"
+}

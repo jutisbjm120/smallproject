@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="imagetitle">
+    <image class="imagetxt" src="/image/my-image-default.png" />
+    <view class="imagetext">
+      <view class="storng">Jto9211767813</view>
+      <view class="phonenumber">136****9845</view>
+    </view>
+  </view>
+  <scroll-view class="scrollview"  scroll-y="true">
+    <view class="heit"></view>
+    <view class="my-list-item-nav my-list-item-border no-login" wx:for="{{mylist}}" wx:key="index">
+      <view class="my-list-item">
+        <image class="my-list-item-icon" src="{{item.icon}}" />
+        <view class="my-list-item-text">{{item.title}}</view>
+        <image class="my-list-item-jump" src="/image/jump.png"></image>
+      </view>
+    </view>
+    <view class="heit"></view>
+    <view class="quoituser">退出账号</view>
+    <view class="superhit"></view>
+  </scroll-view>
+    
+</view>
+  

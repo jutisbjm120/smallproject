@@ -1,0 +1,43 @@
+<view class="alertbox">
+  <view class="search-container {{showitem?'':'isfiexd'}} ">
+    <view class="index-search-bg">
+      <image class="search-icon" src="/image/search.png"></image>
+      <input placeholder="{{pleashoder}}" placeholder-class="shop-search-placeholder" class="index-search-input" value="{{innersearch}}"></input>
+      <view class="search-delete-wrap" bindtap="onDeleteKey">
+        <image class="search-delete-icon" src="/image/clear.png" bindtap="onDeleteKey"></image>
+      </view>
+    </view>
+    <button  class="ui-btn ui-btn-no-border btn-search" role="button" aria-disabled="false" bindtap="search">搜索</button>
+  </view>
+  <view class="search-contan" wx:if="{{showitem}}">
+    <view class="search-hot-container">
+      <view class="search-title">热门搜索</view>
+      <view class="search-suggestHot-container">
+        <view wx:for="{{list}}" class="search-suggest-card" bindtap="onClickHot" wx:key="index" data-item="{{item}}">{{item}}</view>
+      </view>
+    </view>
+    <view class="search-hot-container">
+      <view class="search-title">历史搜索
+        <image class="delete-search" src="/image/delete-search.png" bindtap="showdlg"></image>
+      </view>
+      <view class="search-suggestHot-container">
+        <view wx:for="{{historylist}}" class="search-suggest-card" bindtap="onClickHot" wx:key="index" data-item="{{item}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <tab bindcallSomeFun="callSomeFun" wx:if="{{!showitem}}" nodefiexd="{{nodefiexd}}" bind:resetindex="resetindex" bindtogglefilexd="togglefilexd" isfilexd="{{isfilexd}}" showfillter="{{showfillter}}"></tab>
+  <view class="search-res" wx:if="{{!showitem}}">
+    
+    <scroll-view class="scroll-view" scroll-x="false" scroll-y="true">
+      <!-- <view class="search"> -->
+        <store-list wx:for="{{storeInfo}}" store-info="{{item}}" wx:key="index"></store-list>
+      <!-- </view> -->
+    </scroll-view>
+      
+  </view>
+  <!-- <view class="alert"></view> -->
+</view>
+<overall-resort showover="{{showover}}" data="{{overalldata}}" bind:resetindex="resetindex" bind:togglefilexd="togglefilexd" bindcloseisisfilexd="closefilterdlg" nodefiexd="{{nodefiexd}}"></overall-resort>
+    <!-- tab页筛选模态框 -->
+<filtter showfillter="{{showfillter}}" data="{{filterdata}}" bindclosefilterdlg="closefilterdlg" bindseccessfilter="seccessfilter" activelist="{{activelist}}" nodefiexd="{{nodefiexd}}"></filtter>
+<alert title="{{title}}" showalert="{{showalert}}" bindonClickBaseComponent="onClickBaseComponent"></alert>

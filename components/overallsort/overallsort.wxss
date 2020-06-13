@@ -1,0 +1,25 @@
+/* components/overallsort/overallsort.wxss */
+.overalllist{
+  width: 100%;
+  background-color: #fff;
+  color: #333;
+  position: fixed;
+  z-index: 10;
+}
+.overalllist-item{
+  height: 90rpx;
+  padding: 0 30rpx;
+  display: flex;
+justify-content: flex-start;
+align-items: center;
+position: relative;
+border-bottom: 1px solid #ccc;
+font-size: 28rpx;
+}
+.tab-container{
+  position: fixed;
+  z-index: 10;
+}
+.active{
+  color: #ffd161;
+}

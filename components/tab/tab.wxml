@@ -1,0 +1,10 @@
+<view class="tabs {{(isfilexd||showfillter)?'isfilexd':''}} {{nodefiexd?'nodefiexd':''}}" bindtap="toggleActive">
+  <block wx:for="{{navArray}}" wx:key="index"> 
+    <view  class="{{activeItem==index?'tabsActive':''}}" mark:myMark="{{index}}">
+      <text class="txt">{{item}}</text>
+      <text class="iconfont icon-row-bottom-copy" wx:if="{{index==0&&(!isfilexd)}}"></text>
+      <text class="iconfont icon-shaixuan" wx:if="{{index==3}}"></text>
+      <text class="iconfont icon-row-up-copy" wx:if="{{index==0&&isfilexd}}"></text>
+    </view>
+  </block>
+</view>

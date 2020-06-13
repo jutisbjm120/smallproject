@@ -1,0 +1,84 @@
+.filterbox{
+  height: 55vh;
+  background-color: #fff;
+  width: 100%;
+  font-size: 24rpx;
+  padding:30rpx 20rpx 0 20rpx;
+}
+.filter-btn-icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.filterlisttitle{
+  margin: 40rpx 0 30rpx;
+align-items: center;
+padding-left: 30rpx;
+color: #333;
+font-size: 28rpx;
+}
+.filter-item-tab{
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+.filter-item-btn-style {
+  float: left;
+  width: 224rpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+  margin-right: 19rpx;
+  border-radius: 4rpx;
+  position: relative;
+  top: 1px;
+  color: #666;
+  background: #F8F8F8;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter-select-footer {
+height: 100rpx;
+  bottom: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: #fff;
+  border-top: 1rpx solid #e4e4e4;
+  width: 100%;
+}
+.filter-clear-btn {
+ line-height: 100rpx;
+  font-size: 22rpx;
+  flex: 1 0 0;
+  text-align: center;
+  font-size: 32rpx;
+}
+.filter-submit-btn {
+  background-color: #ffd161;
+  color: #333;
+  font-size: 32rpx;
+  flex: 1 0 0;  
+}
+.activefilter{ 
+  background: rgba(255,209,97,0.2);
+  color: #FFB000;
+}
+.filter-submit-count {
+color: #ffd161;
+  }
+  .filter-select-count {
+width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: #333;
+    font-size: 20rpx;
+    margin-left: 12rpx;
+    }
+    
+  
+
+  
+  
+  
+  

@@ -1,0 +1,131 @@
+.head{
+  height: 60rpx;
+  line-height: 60rpx;
+  position: fixed;
+  background-color: #fff;
+  z-index: 999;
+  width: 100%;
+  padding: 0 50rpx 0 20rpx;
+}
+.loaction{
+ width: 40%;
+ text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ float: left;
+ position: absolute;
+}
+.text{
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ display: block;
+}
+.serch{
+  display: flex;
+  width: 50%;
+  padding-left: 10rpx;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  background: #eee;
+  align-items: center;
+  line-height: 60rpx;
+  margin-right: 51rpx;
+  height: 60rpx;
+  float:right;
+  transition: all 300ms linear;
+  position: absolute;
+  left: 40%;
+  /* z-index: 9999; */
+}
+.place-holder{
+  font-size: 30rpx;
+}
+/*nav导航中的样式*/
+.nav{
+  margin-top: 60rpx;
+  height: 400rpx;
+}
+.swiper{
+  height: 400rpx;
+}
+.nav .item{
+  width: 20%;
+  height: 150rpx;
+}
+.nav-item{
+  display: flex;
+  flex-wrap: wrap;
+  height: 300rpx;
+  text-align: center;
+  font-size: 28rpx;
+
+}
+.nav .item image{
+  width: 135rpx;
+  height: 100rpx;
+}
+.fuJin{
+  height: 60rpx;
+  margin: 20rpx auto;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.fuJin text{
+  position: relative;
+}
+.fuJin text::after,.fuJin text::before{
+  content: "";
+  height: 1px;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  width: 80rpx;
+}
+.fuJin text::before{
+  right: 125rpx;
+}
+.fuJin text::after{
+  left: 125rpx;
+}
+
+.tabNav{
+  font-size: 30rpx;
+  border-bottom:1px solid #ccc;
+}
+.tabNav>view{
+  padding-left:40rpx;
+  border-top:1px solid #ccc;
+  height:70rpx;
+  line-height:70rpx;
+}
+.tabNav>view.active{
+  color:#ffd161;
+}
+.search-toggle{
+  width: 88%;
+  left: 2%;
+}
+.newuser{
+  height: 274rpx;
+position: relative;
+margin-bottom: 30rpx
+}
+.newuser image{
+  width: 100%;
+  height: 100%;
+}
+.slide-image{
+  width: 710rpx;
+  height: 190rpx;
+}
+.bnr-sec{
+  background: #fff;
+  padding: 0 20rpx 20rpx;
+  height: 190rpx;
+}
+
+
+

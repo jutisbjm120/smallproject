@@ -1,0 +1,11 @@
+<view  class="masking"  wx:if="{{showalert}}" data-action="dlg" catchtap="clackdlg"> 
+  <view class="ui-modal">
+    <view class="ui-modal-content">
+      <view class="ui-modal-message">{{title}}</view>
+    </view>
+    <view class="ui-modal-controls">
+      <view catchtap="onClickBaseComponent" class="ui-modal-cancel" data-action="cancel">取消</view>
+      <view catchtap="onClickBaseComponent" class="ui-modal-confirm ui-modal-confirm-border" data-action="ok">确认</view>
+    </view>
+  </view>
+</view>

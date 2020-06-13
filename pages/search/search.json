@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "alert":"/components/alert/alert",
+    "tab":"/components/tab/tab",
+    "store-list":"/components/store-list/store-list",
+    "filtter":"/components/filtter/filtter",
+    "overall-resort":"/components/overallsort/overallsort"
+  },
+  "navigationBarTitleText": "搜索"
+}

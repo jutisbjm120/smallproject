@@ -1,0 +1,3 @@
+<view class="dla {{toph?'top':''}} {{nodefiexd?'nodefiexd':''}}" wx:if="{{maskingShow}}" catchtouchmove='stopscroll' catchtap="closedla">
+  <slot data-id="slot"></slot>
+</view>

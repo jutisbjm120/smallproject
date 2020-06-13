@@ -1,0 +1,305 @@
+<view  class="page-container-flex">
+  <view class="content">
+    <view class="main-header">
+      <view class="header-info">
+        <image class="header-info-poi" src="{{info.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+         <view class="header-info-txt">
+           <view class="header-info-row">
+             <view class="header-info-row-text">
+              起送 ¥{{info.qisong}}
+              <view class="header-info-line"></view>
+              {{info.fen}}分钟
+              <view class="header-info-line"></view>
+              {{info.jvli}}km
+             </view>
+             <image v-if="{{info.ismeituan}}" class="poi-deliver" src="/image/deliver.png" />
+           </view>
+           <view class="header-info-ad">
+               公告：尊敬的顾客您好，为了方便您的就餐，现将门店营业时间告知：06：30—21：00 ，如您有就餐意愿，请您在营业时间内点餐，谢谢您的支持！
+           </view>
+           <view class="header-announce header-carousel">
+             <swiper class="header-carousel-content header-carousel-content-animate" style="transform:translateY(-000%) translateZ(0)" autoplay="true" vertical="true" interval="2000" circular="true">
+               <swiper-item class="discount-item header-discount-item">
+                 <image class="discount-icon" src="http://p0.meituan.net/0.0.o/activityconfig/0879777e1b1814184f6326d7ec5b07ea1911.png.webp" />
+                  <view class="header-discount-text">{{info.jian}}</view>
+               </swiper-item>
+               <swiper-item class="discount-item header-discount-item">
+                  <image class="discount-icon" src="http://p0.meituan.net/0.0.o/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png.webp"/>
+                  <view class="header-discount-text">
+                    {{info.xin}}
+                  </view>
+               </swiper-item>
+               <swiper-item class="discount-item header-discount-item">
+                  <image class="discount-icon" src="http://p0.meituan.net/0.0.o/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png.webp" />
+                  {{info.zhe}}
+               </swiper-item>
+               <swiper-item class="discount-item header-discount-item">
+                  <image class="discount-icon" src="http://p1.meituan.net/0.0.o/activityconfig/3fc360f1c726e7148380f4c77fa303fd1475.png.webp"/>
+                  {{info.quan}}
+               </swiper-item>
+             </swiper> 
+             <view class="header-carouse-tip">
+               <image class="header-carouse-tip-arrow ui-inline-block" src="/image/restaurant-arrow.png"/>
+             </view> 
+           </view>
+         </view>
+      </view>
+    </view>
+    <view class="main" style="top:82px;height: calc(100% - 82px)">
+      <view class="panel-headers">
+        <view bindtap="onClickPanelHeader" wx:for="{{tablist}}" wx:key="index" class="panel-header  {{index==tabactiveindex?'panel-header-active':''}}" data-index="{{index}}">
+            <view class="panel-header-txt">
+              {{item}}
+            </view>
+        </view>
+      </view>
+      <swiper class="main-swiper" current="{{current}}" bindchange="currentchange">
+        <swiper-item class="panel panel-food">
+          <view class="panel-food-content">
+            <view class="hidding-scrollbar hidding-fix">
+              <scroll-view class="type-tab" scroll-x="false" scroll-y="true" >
+                <view class="cat-box {{index==scrolllistactiveindex?'active-type':''}}" wx:for="{{scrolllist}}" wx:key="index" data-index="{{index}}" data-item="{{item}}" bindtap="chooseType">
+                  <view  class="cat-item flex-center">
+                    <view class="cat-item-name">
+                      <image wx:if="{{index==0}}" class="hot-icon" src="http://p1.meituan.net/0.0.o/aichequan/87f966955f693102d67daf2ec44b58411361.png.webp"/>
+                      <image wx:if="{{index==1}}"  class="hot-icon"  src="http://p0.meituan.net/0.0.o/aichequan/45662b4d1968fd75bff38de23f6d62641421.png.webp" />
+                      <text class="cat-item-text">{{item}}</text>
+                    </view>
+                  </view>
+                </view>
+                <view class="empty-solt fixed-empty-solt"></view>
+              </scroll-view>
+            </view>
+            <view class="hidding-scrollbar">
+              <view class="tab-header">{{tabtit}}</view>
+              <scroll-view class="product-tab space-for-solt" scroll-x="false" scroll-y="true" scroll-top="{{scrollTtop}}" bindscroll="actionscroll">
+                <view style="visibility: visible;position: relative" wx:for="{{presslist}}" wx:key="index"> 
+                  <view class="tab-header" wx:if="{{index!=0}}">
+                    {{item.title}}
+                  </view>
+                  <view wx:for="{{item.list}}" wx:for-item="items" wx:key="index" class="food-item" wx:for-index="itemindex">
+                    <view  class="food-item-image">
+                      <image class="food-item-img" src="{{items.image}}"/>
+                    </view>
+                    <view class="food-info-wrap">
+                      <view class="food-info">
+                        <view class="food-info-wrap-wrap">
+                          <view class="food-item-header">{{items.title}}</view>
+                          <view class="food-description">
+                            主要食材：泰国茉莉香米、广式腊肠、广式腊肉、纯肋排块、阳江豆豉、鸡腿肉、咸蛋黄、玉米粒、甜豌豆 、胡萝卜丁 味道：甜香、酒香、咸鲜、蒜香。
+                          </view>
+                          <view  class="food-item-sales-info">月售{{items.monthsale}} 赞{{items.praise}}</view>
+                        </view>
+                        <view class="food-item-price-info">
+                          <text class="food-item-price left-margin-7">￥{{items.price}}</text>
+                          <text class="food-item-unit">/1人份</text>
+                        </view>
+                        <view class="choose-num fl flex-center">
+                          <image class="add-food" src="/image/add.png" data-price="{{items.price}}" data-inde="{{index}}" data-itemindex="{{itemindex}}" data-direation="{{1}}" bindtap="setconfigclick" />
+                          <image wx:if="{{items.count!=0}}" class="remove-food" src="/image/remove.png" data-price="{{items.price}}" data-inde="{{index}}" data-direation="{{-1}}" bindtap="setconfigclick" data-itemindex="{{itemindex}}" />
+                          <view wx:if="{{items.count!=0}}" class="food-num">{{items.count}}</view>
+                        </view>
+                      </view>
+                      <view class="spu-tag-container">
+                        <image class="food-item-tip-img" src="http://p1.meituan.net/aichequan/c9bcb26d2e342c7bffd0267ae3f129c03286.png" style="height: 15px; width: 60px;"/>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </scroll-view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item class="panel panel-food">
+          <view class="pannel-comment">
+            <scroll-view class="page-scroll-comment"  scroll-y="true">
+              <view class="comment-score-total">
+                <view class="comment-score-left">
+                  <view class="comment-score-left-big">
+                    <view class="comment-score-big">{{evaluateinfo.agreegrade}}</view>
+                    <view class="comment-score-txt">商家评分</view>
+                  </view>
+                  <view class="comment-score-left-middle">
+                    <view class="comment-score-right-sub">
+                      口味
+                      <view class="score-star-container">
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star ui-star"></view>
+                      </view>
+                      <view class="comment-scroe-small">{{evaluateinfo.packaging}}</view>
+                    </view>
+                    <view class="comment-score-right-sub">
+                      包装
+                      <view class="score-star-container">
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star"></view>
+                        <view class="score-star ui-star ui-star"></view>
+                      </view>
+                      <view class="comment-scroe-small">{{evaluateinfo.distribution}}</view>
+                    </view>
+                  </view>
+                </view>
+                <view class="comment-score-right">
+                  <view class="delivery_score">{{evaluateinfo.taste}}</view>
+                  <view class="delivery_title">配送评分</view> 
+                </view>
+              </view>
+              <view class="comment-tags-wrap">
+                <view class="comment-tag" catchtap="onClickCommentTag" wx:for="{{evaluatelist}}" wx:key="index">{{item}}</view>
+              </view>
+              <view class="comment-info-wrap">
+                <view class="comment-info-tab" wx:for="{{evaluateinfo.list}}" wx:key="index">
+                  <image class="comment-avatar" src="{{item.image}}" />
+                   <view class="f59">
+                      <view class="comment-info-username ellipsis">{{item.name}}</view>
+                      <view class="comment-info-date">{{item.date}}</view>
+                      <view class="comment-info-sub">
+                        <view class="score-star ui-star" wx:for="{{item.grade-0}}" wx:key="index"></view>
+                        <view class="score-star ui-star ui-star-grey " wx:for="{{4-(item.grade-0)}}" wx:key="index"></view>
+                        <view class="score-star   ui-star ui-star-grey" wx:if="{{item.grade!='5'}}"></view>
+                        <view class="comment-info-shiptime">{{item.distance}}分钟送达</view>
+                      </view>
+                      <view class="comment-info-comment">{{item.tit}}</view>
+                      <view class="add-comments">
+                          {{item.text}} 
+                      </view>
+                   </view>
+                </view>
+                  
+              </view>
+                
+            </scroll-view>
+          </view>
+        </swiper-item>
+        <swiper-item class="panel panel-info" item-id="">
+          <scroll-view class="scroll-info" scroll-x="false" scroll-y="true">
+            <view class="poi-info-row">
+              <view class="shop-info-address">
+                <image class="address-icon mr20" src="/image/near.png" />
+                <view class="address-txt"> 北京市东城区大雅宝胡同27号 </view>
+                <image class="call-icon mr20" src="/image/order_info_phone.png"/>
+              </view>
+            </view>
+            <view class="poi-info-row">
+              <view class="qualification-main">
+                <image class="mr20 qualification-icon" src="/image/qualification.png" />
+                <view class="qual-text">查看食品安全档案</view>
+                <image class="mr20 arrow-right" src="/image/jump.png" />
+              </view>
+                
+            </view>
+            <view class="poi-info-row">
+              <view class="shipping-service">
+                <view class="shipping-service-inner">
+                  <image class="service-icon mr20" src="/image/service.png"/>
+                  <view class="service-txt">
+                    配送服务:
+                    <view class="shipping-tip">
+                      <view class="flex-center">
+                        <image class="deliver-icon" src="/image/deliver.png" />
+                        <view >提供高品质送餐服务</view> 
+                      </view>
+                        
+                    </view>
+                  </view>
+                    
+                </view>
+                 <view class="deliver-icons">
+                   <image class="fast-icon" src="/image/fast.png" />
+                   <image class="timely-icon" src="/image/timely.png" />
+                 </view>
+                    
+              </view>
+              <view class="shipping-time">
+                <image class="clock-icon mr20" src="/image/clock.png" />
+                 <view>配送时间：10:00-21:30</view>
+              </view>
+                
+            </view>
+            <view class="poi-info-row">
+              <view class="poi-service">
+                <image class="poi-service-icon mr20" src="" />
+                 <view class="service-txt">
+                   商家服务
+                   <view class="poi_service_item">
+                     <image class="discount-icon poi-service-icon" src="" />
+                     到店自取（享优惠） 
+                   </view>
+                 </view>
+                   
+              </view>
+              <view class="discount">
+                <view class="discount-list">
+                  <view class="discount-item mb25">
+                    <image class="discount-icon" src="http://p0.meituan.net/0.0.o/activityconfig/0879777e1b1814184f6326d7ec5b07ea1911.png.webp"/>
+                    <view> 新人立减17(可与满减同享)</view>
+                  </view>
+                  <view class="discount-item mb25">
+                    <image class="discount-icon" src="http://p0.meituan.net/0.0.o/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png.webp"/>
+                    <view> 满35减10;满65减28;满100减40;满150减50 </view>
+                  </view>
+                  <view class="discount-item mb25">
+                    <image class="discount-icon" src="http://p1.meituan.net/0.0.o/xianfu/1cc4324d7d2f59f2cccb6920b57cd0902048.png.webp"/>
+                    <view> 本店新用户立减2元 </view>
+                  </view>
+                  <view class="discount-item mb25">
+                    <image class="discount-icon" src="http://p0.meituan.net/0.0.o/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png.webp"/>
+                    <view> 折扣商品4.24折起 </view>
+                  </view>
+                  <view class="discount-item mb25">
+                    <image class="discount-icon" src="http://p1.meituan.net/0.0.o/activityconfig/3fc360f1c726e7148380f4c77fa303fd1475.png.webp"/>
+                    <view>领5元券;领10元券 </view>
+                  </view>
+                  <view class="discount-item">
+                    <image class="discount-icon" src="http://p0.meituan.net/0.0.o/xianfu/652eea4034250563fe11b02e3219ba8d981.png.webp"/>
+                    <view> 实际支付10元返4元商家代金券 </view>
+                  </view>
+                </view>
+                  
+              </view>
+                
+            </view>
+              
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view> 
+  </view>
+  <view class="cart-view">
+    <view class="modal-backdrop footer-backdrop cart-backdrop"></view>
+    <view class="modal-backdrop footer-backdrop cart-backdrop"></view>
+    <view class="cart">
+
+    </view>
+    <view class="cart-tip-container" wx:if="{{tabactiveindex==0}}">
+      <view class="cart-tip">
+        新用户立减17元(在线支付专享)
+        <text class="cart-highlight"></text>
+        <text class="cart-highlight"></text>
+      </view>
+    </view>
+    <view class="footer" wx:if="{{tabactiveindex==0}}">
+      <view class="cart-icon">
+        <view class="cart-img cart-img-normal-active" wx:if="{{count!=0}}"></view>
+        <view class="cart-img cart-img-special-empty" wx:else></view>
+        <view class="cart-num flex-center" wx:if="{{count!=0}}">{{count}}</view>
+      </view>
+      <button class="bill-btn flex-center" wx:if="{{count!=0}}" bindtap="clearing">去结算</button>
+      <view class="spend" wx:if="{{count!=0}}">
+        <view class="food-count">￥{{sumprice}}</view>
+        <view class="fee-count">另需配送费¥5</view>
+      </view>
+      <view wx:if="{{count==0}}" class="bill-btn flex-center unavail-btn" data-action="notsubmit">20元起送</view>
+      <view class="cart-empty" wx:if="{{count==0}}">
+        <view class="cart-empty-txt">
+          另需配送费¥5
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

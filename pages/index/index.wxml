@@ -1,0 +1,71 @@
+<view class="container">
+  <view class="head">
+    <view class="loaction" bindtap="showloaction" wx:if="{{autoinputSearch}}">
+      <text class="icon-dingwei iconfont"></text>
+      <text class="text">{{loaction}}</text>
+      <text class="icon-row-right-copy iconfont"></text>
+    </view>
+    <view class="serch {{autoinputSearch?'':'search-toggle'}}">
+      <text class="iconfont icon-search"></text>
+      <input placeholder-class="place-holder" placeholder="自动获取焦点" confirm-type="go" bindtap="opensearch"></input>
+    </view>
+  </view>
+  <view class="nav">
+    <swiper indicator-dots="true" indicator-active-color="#ffd161" autoplay="false" class="swiper">
+      <swiper-item class="nav-item">
+        <view wx:for="{{array}}" wx:key="index" class="item" bindtap="swiperitem">
+            <image src="/image/t{{(index%8)+1}}.png"></image>
+            <view>{{item}}</view>
+        </view>
+      </swiper-item>
+      <swiper-item class="nav-item" bindtap="swiperitem">
+        <view wx:for="{{array}}" wx:key="index" class="item">
+            <image src="/image/t{{(index%8)+1}}.png"></image>
+            <view>{{item}}</view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="newuser" bindtap="islogin">
+    <image src="/image/14ae283d36bc435a115d8c0866669aca84098.png" class="slide-image"></image>
+  </view>
+  <swiper indicator-dots="true" indicator-active-color="#ffd161" autoplay="false" class="bnr-sec">
+    <swiper-item>
+      <image src="/image/508b7dd3a9b88323bcc86352e98e5ce945715.png" class="slide-image"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/5ef6a99a7b0330d20bfe619b397d409351116.png" class="slide-image"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/635d898c2aaba61f4ee6751d122013f7140892.png" class="slide-image"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/79e49db762a098b01288e525d9e2d5de57970.jpg" class="slide-image"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/a566c1630df42513a9b495f895e9ffad47915.png" class="slide-image"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/bizad_zzcpm_13006501588696871407386.jpg" class="slide-image"></image>
+    </swiper-item>
+  </swiper>
+  <view class="fuJin">
+    <view>
+      <text>附近商家</text>
+    </view>
+  </view>
+  <tab bindcallSomeFun="callSomeFun" bind:resetindex="resetindex" bind:togglefilexd="togglefilexd" isfilexd="{{isfilexd}}" showfillter="{{showfillter}}"  bindcloseisisfilexd="{{closeisisfilexd}}"></tab>
+    <!-- <view class="tabNav" wx:if="{{isShownav}}">
+      <view wx:for="{{navTaba}}" bindtap='selectSort' class="{{tabNavItem==index?'active':''}}" wx:key="index" data-index="{{index}}">{{item}}</view>
+    </view> -->
+   <!-- 首页商品列表 -->
+    <view class="pageInfo">
+        <store-list id="mystore" wx:for="{{list}}" wx:key="index" bind:cancelEvent="fn" store-info="{{item}}"></store-list>
+    </view>
+    <!-- 滚动到最后加载的loading -->
+    <!-- <footer-loading wx:if="{{showloading}}" showlast="{{showlast}}"></footer-loading> -->
+    <!-- 综合排序的筛选列表 -->
+    <overall-resort showover="{{showover}}" data="{{overalldata}}" bind:resetindex="resetindex" bind:togglefilexd="togglefilexd" bindcloseisisfilexd="closeisisfilexd"></overall-resort>
+    <!-- tab页筛选模态框 -->
+    <filtter showfillter="{{showfillter}}" data="{{filterdata}}" bindclosefilterdlg="closefilterdlg" bindseccessfilter="seccessfilter" activelist="{{activelist}}"></filtter>
+</view>

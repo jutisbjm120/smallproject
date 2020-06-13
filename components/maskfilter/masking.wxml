@@ -1,0 +1,3 @@
+<mask-ing wx:if="{{showmask}}" >
+
+</mask-ing>
